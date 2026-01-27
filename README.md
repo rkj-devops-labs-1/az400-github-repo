@@ -11,3 +11,8 @@ This repository contains step-by-step hands-on labs for:
 This repository is cloned and maintained using Git.
 Update README with contribution section
 Update README with contribution section 2
+
+## Ruleset created and applied on main
+
+Once more trying it out - last time missed out mentioning the issue id.
+There are workflow, template etc items added in the process.
