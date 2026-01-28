@@ -31,6 +31,7 @@ jobs:
   tests:
     name: Tests Job
     runs-on: ubuntu-latest
+    needs: build
     steps:
       - name: Checkout source code
         uses: actions/checkout@v4
@@ -43,6 +44,7 @@ jobs:
   lint:
     name: Lint Job
     runs-on: ubuntu-latest
+    needs: tests
     steps:
       - name: Checkout source code
         uses: actions/checkout@v4
