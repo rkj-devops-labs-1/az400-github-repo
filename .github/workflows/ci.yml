@@ -20,9 +20,9 @@ jobs:
       - name: Use secret safely
         run: |
           echo "Using secret in pipeline"
-          echo "API key length: ${#DEMO_API_KEYYY}"
+          echo "API key length: ${#DEMO_API_KEY}"
         env:
-          DEMO_API_KEYYY: ${{ secrets.DEMO_API_KEY }}
+          DEMO_API_KEY: ${{ secrets.DEMO_API_KEY }}
 
       - name: Display repository info
         run: |
@@ -60,3 +60,12 @@ jobs:
         run: |
           echo "Running lint checks..."
           echo "Lint passed"
+
+  deploy:
+    runs-on: ubuntu-latest
+    environment: prod
+    steps:
+      - name: Use prod secret
+        run: echo "Deploying to production"
+        env:
+          CONN: ${{ secrets.PROD_CONNECTION_STRING }}
